@@ -2,6 +2,8 @@
 
 This project implements a Hydra MCP (Model Control Protocol) server that enables Claude to interact with various client functions through a REST API interface. The system consists of a central server that coordinates communication between multiple clients and exposes their functions to Claude through a standardized API.
 
+![Claude using the Hydra MCP plugin](image.png)
+
 ## Project Structure
 
 - `ipc_server.py`: The central FastAPI server that manages function registration and routing
