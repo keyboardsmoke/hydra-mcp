@@ -24,6 +24,13 @@ async def get_functions():
     """
     return function_registry
 
+@app.get("/get_endpoints")
+async def get_endpoints():
+    """
+    Get a list of endpoints from the MCP server
+    """
+    return list(function_registry.keys())
+
 def main():
     uvicorn.run(app, host="0.0.0.0", port=API_SERVER_PORT)
 

@@ -8,8 +8,8 @@ APP_PORT = 6577
 
 app = FastAPI()
 
-def echo(message: str) -> None:
-    print(message)
+def echo(message: str) -> str:
+    return message
 
 @app.post("/call_function")
 async def call_function(data: dict[Any, Any]):
@@ -28,8 +28,8 @@ def main():
         "functions": [
             {
                 "name": "echo", 
-                "args": ["message: str"], 
-                "return_type": "None", 
+                "args": [{'name': 'message', 'type': 'str'}], 
+                "return_type": "str", 
                 "description": "Echo a message"
             }
         ]
